@@ -1,10 +1,14 @@
+//requires two strings in an object txt.{first:"", second:""}
+//test to see if the txt.second is a permutation of txt.first
+// mista-j
 
-
+//This will run a permutation test at a given position of string one
+//  returns boolean
 function permTest( txt, pos1, pos2)
 {
 	console.log(pos1);
 	console.log(pos2);
-		if( pos2 > txt.second.length)
+		if( pos2 > txt.second.length-1)
 		{
 			return true;
 		}
@@ -19,6 +23,10 @@ function permTest( txt, pos1, pos2)
 		}
 }
 
+//this will search txt.first for the first char of txt.second
+// if found will run permTest to test the permutation
+// returns true if permTest finds a permutation,
+// returns false if all permTest are negative and/or all txt.first chars != txt.second.charAt(0)
 function checkPermutation( txt )
 {
 	var test=false;
@@ -42,7 +50,7 @@ function checkPermutation( txt )
 }
 
 
-var txt = {first: "Hello World", second: "Wor"};
+var txt = {first: "Hello World", second: "Wor"};  //this program runs on the requirements of this object
 var test=checkPermutation(txt);
 
 if(test)
